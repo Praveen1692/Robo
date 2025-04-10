@@ -64,23 +64,34 @@ const serviceData = [
 
 function Services() {
   return (
-    <div className="bg-gray-50 font-roboto mb-10">
-      <div className="text-center py-16">
-        <h2 className="text-purple-600 text-sm font-semibold">OUR SERVICES</h2>
-        <h1 className="text-4xl font-bold text-gray-900 mt-2">
+    <div className="bg-gradient-to-b from-gray-50 to-white font-roboto py-20">
+      {/* Header Section */}
+      <div className="text-center py-16 px-4">
+        <h2 className="text-purple-600 text-base font-semibold tracking-wider uppercase animate-fade-in">
+          OUR SERVICES
+        </h2>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4 max-w-3xl mx-auto leading-tight">
           Intelligent Innovations: Tailored AI Solutions
         </h1>
+        <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
+          Discover our comprehensive range of AI-powered services designed to transform your business.
+        </p>
       </div>
 
+      {/* Services Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {serviceData.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-            />
+            <div 
+              key={index} 
+              className="transform transition-all duration-500 hover:-translate-y-2"
+            >
+              <ServiceCard
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+              />
+            </div>
           ))}
         </div>
       </div>
